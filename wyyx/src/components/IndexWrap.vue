@@ -1,5 +1,6 @@
 <template>
   <div class="title_div">
+		<!-- 顶部logo、搜索框和登陆按钮 -->
     <van-row type="flex" justify="space-between" style="padding:0 .2rem;">
       <van-col span="5">
         <img class="logo" src="../assets/logo-img.png" />
@@ -15,17 +16,20 @@
       </van-col>
     </van-row>
 
+    <!--中间横向导航条  -->
     <van-tabs v-model="active" swipeable class="tabBtnWrap">
       <van-tab v-for="index in tabBtnArr" :title="index" :key="index">
       </van-tab>
     </van-tabs>
 
+    <!--轮播图  -->
     <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
       <van-swipe-item v-for="item in swipe_imgArr" :key="item">
         <img :src="item" />
       </van-swipe-item>
     </van-swipe>
 
+    <!-- logo加文字装饰 -->
     <div class="indexServicePolicy">
       <ul>
         <li>
@@ -49,7 +53,8 @@
       </ul>
     </div>
 
-    <div class="goodsColumn_wrap" :column-num="3">
+    <!-- 九宫格商品种类 -->
+    <div class="goodsColumn_wrap">
       <van-grid :column-num="5">
         <van-grid-item
           v-for="(n, inx) in goodsColumn_Arr"
@@ -61,6 +66,7 @@
       </van-grid>
     </div>
 
+    <!-- 限时购倒计时 -->
     <div class="countDowntWrap">
       <p>限时购</p>
       <van-count-down :time="time" class="countDownStyle">
@@ -75,6 +81,7 @@
       <a href="#" class="right">更多></a>
     </div>
 
+    <!-- 商品列表 -->
     <div class="GoodsList_wrap">
       <van-grid :column-num="3">
         <van-grid-item
@@ -86,6 +93,7 @@
       </van-grid>
     </div>
 
+    <!-- 底部导航栏 -->
     <footer_bar></footer_bar>
   </div>
 </template>

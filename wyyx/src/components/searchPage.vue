@@ -59,7 +59,7 @@ export default {
   methods: {
     // 获得焦点
     inputValFn(v) {
-      console.log(v);
+      // console.log(v);
       this.input_v = v;
     },
     // 清空搜索框按钮
